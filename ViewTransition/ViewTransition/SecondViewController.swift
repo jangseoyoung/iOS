@@ -21,8 +21,14 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.nameLabel.text = UserInformation.shared.name
-        self.ageLabel.text = UserInformation.shared.age
+        if let Myname = UserInformation.shared.name{
+            self.nameLabel.text = Myname
+        }
+        
+        if let Myage = UserInformation.shared.age{
+            self.ageLabel.text = Myage
+        }
+        
         
         print("SecondViewController의 view가 화면에 보여질 예정")
     }
@@ -49,7 +55,7 @@ class SecondViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        print("SecondViewController의 view가 subview를 레이아웃 함@")
+        print("SecondViewController의 view가 subview를 레이아웃 함")
     }
 
     @IBAction func popToPrev(){
