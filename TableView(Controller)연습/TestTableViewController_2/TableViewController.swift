@@ -10,8 +10,8 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let animalKorean = ["사자","호랑이","토끼","원숭이","돌고래"]
-    let animalEnglish = ["Lion","Tiger","Rabbit","Monkey","Dolphin"]
+    let animalKorean = ["사자","호랑이","토끼","원숭이","돌고래","개","고양이","닭","소","말"]
+    let animalEnglish = ["Lion","Tiger","Rabbit","Monkey","Dolphin","Dog","Cat","Chicken","Cow","Horse"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
