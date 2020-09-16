@@ -42,7 +42,6 @@
 		EF8E5577250F5CB8002B3D78 = {
 			isa = PBXGroup;
 			children = (
-				EF8E5597250F5CCB002B3D78 /* TableViewController.swift */,
 				EF8E5582250F5CB8002B3D78 /* TestTableViewController_2 */,
 				EF8E5581250F5CB8002B3D78 /* Products */,
 			);
@@ -59,6 +58,7 @@
 		EF8E5582250F5CB8002B3D78 /* TestTableViewController_2 */ = {
 			isa = PBXGroup;
 			children = (
+				EF8E5597250F5CCB002B3D78 /* TableViewController.swift */,
 				EF8E5583250F5CB8002B3D78 /* AppDelegate.swift */,
 				EF8E5585250F5CB8002B3D78 /* SceneDelegate.swift */,
 				EF8E5587250F5CB8002B3D78 /* ViewController.swift */,

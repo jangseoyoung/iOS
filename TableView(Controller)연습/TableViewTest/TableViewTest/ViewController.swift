@@ -14,7 +14,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     
     let cellIdentifier: String = "cell"
     
-    let animalKorean = ["사자","호랑이","토끼","원숭이","돌고래"]
+    let animalKorean = ["사자","호랑이","토끼","원숭이","돌고래", "돌고래", "돌고래"]
     let animalEnglish = ["Lion","Tiger","Rabbit","Monkey","Dolphin"]
     override func viewDidLoad() {
         super.viewDidLoad()
