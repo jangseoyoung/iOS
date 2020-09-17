@@ -10,7 +10,10 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
-   
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var memoLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

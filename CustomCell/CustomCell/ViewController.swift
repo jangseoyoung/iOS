@@ -8,30 +8,57 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+struct CustomLabel {
+    let address : String
+    let time : String
+    let memo : String
+}
+
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     let cellIdentifier: String = "customcell"
     
+    var array: [CustomLabel] = []
     
-    override func viewDidLoad() {        super.viewDidLoad()
+    let Labels = [
+       CustomLabel(address : "This is address Label", time : "This is time Label", memo: "This is memo")
+    ]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
+}
+
+
+extension ViewController:  UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : TableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! TableViewCell
+        let cell : TableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) as! TableViewCell
         
-        cell.addressLabel.text = "This is address"
-        cell.timeLabel.text = "This is time"
-        cell.memoLabel.text = "This is memo"
+        let cells = Labels[indexPath.row]
+        
+        cell.addressLabel.text = cells.address
+        cell.timeLabel?.text = cells.time
+        cell.memoLabel?.text = cells.memo
         
         return cell
     }
     
-
-
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
 }
-
