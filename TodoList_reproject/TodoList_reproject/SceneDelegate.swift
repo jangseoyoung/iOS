@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  TodoList
+//  TodoList_reproject
 //
-//  Created by 장서영 on 2020/09/24.
+//  Created by 장서영 on 2020/09/25.
 //
 
 import UIKit
