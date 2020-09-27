@@ -13,10 +13,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var TableView : UITableView!
     
+    // Row의 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todolist.count
     }
     
+    // cell에 들어갈 데이터
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
@@ -26,6 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    // Edit mode
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
             todolist.remove(at: indexPath.row)
@@ -33,6 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    // UserDefaults : 데이터 저장
     func saveData() {
         let data = todolist.map {
             [

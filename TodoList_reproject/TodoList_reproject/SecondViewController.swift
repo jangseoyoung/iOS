@@ -12,10 +12,12 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var Maintitle: UITextField!
     @IBOutlet weak var Content: UITextView!
     
+    // cancel버튼을 눌렀을 때
     @IBAction func cancelItem(_ sender : UIBarButtonItem){
         self.navigationController?.popViewController(animated: true)
     }
     
+    // Done버튼을 눌렀을 때
     @IBAction func DoneItem(_ sender: UIBarButtonItem) {
         let title = Maintitle.text!
         let content = Content.text!
