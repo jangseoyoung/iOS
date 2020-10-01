@@ -28,3 +28,4 @@
 
 ![스크린샷 2020-09-30 오후 11.49.35](/Users/jangseoyoung/Library/Application Support/typora-user-images/스크린샷 2020-09-30 오후 11.49.35.png)
 
+![스크린샷 2020-10-01 오후 11.49.01](/Users/jangseoyoung/Library/Application Support/typora-user-images/스크린샷 2020-10-01 오후 11.49.01.png)
