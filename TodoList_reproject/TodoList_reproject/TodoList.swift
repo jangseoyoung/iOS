@@ -8,6 +8,7 @@
 import Foundation
 
 // 구조체 선언
+//Model
 struct TodoList {
     var todoTitle : String = " "
     var todoText : String = " "
