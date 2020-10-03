@@ -26,6 +26,15 @@
 
 - 기존의 MVC는 iOS개발에 부적합하므로 애플에서 CocoaMVC구조를 제시함.
 
-![스크린샷 2020-09-30 오후 11.49.35](/Users/jangseoyoung/Library/Application Support/typora-user-images/스크린샷 2020-09-30 오후 11.49.35.png)
+> Apple's MVC
+>
+> ![스크린샷 2020-09-30 오후 11.49.35](/Users/jangseoyoung/Library/Application Support/typora-user-images/스크린샷 2020-09-30 오후 11.49.35.png)
 
-![스크린샷 2020-10-01 오후 11.49.01](/Users/jangseoyoung/Library/Application Support/typora-user-images/스크린샷 2020-10-01 오후 11.49.01.png)
+> Real Apple's MVC
+>
+> ![스크린샷 2020-10-01 오후 11.49.01](/Users/jangseoyoung/Library/Application Support/typora-user-images/스크린샷 2020-10-01 오후 11.49.01.png)
+
+- MVC 안에서 Controller의 역할 
+  - 모델의 정보를 해석 & 구현해서 뷰에게 주는 것
+  - = 뷰 & 사용자와의 상호작용을 모델에게 해석해 줌,
+  - *Controller* 가 모든 커뮤니케이션의 중간임.
