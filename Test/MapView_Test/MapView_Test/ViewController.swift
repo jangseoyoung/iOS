@@ -28,16 +28,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         myMap.showsUserLocation = true
     }
     
-    func goLocation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span: Double){
+    func goLocation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span: Double)->CLLocationCoordinate2D{
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longitudeValue)
         let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
         let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
         myMap.setRegion(pRegion, animated: true)
+        return pLocation
+    }
+    
+    func setAnnotation(latitudeValue: CLLocationDegrees, longtitudeValue: CLLocationDegrees, delta span: Double, title strTitle: String, subtitle strsubtitle: String){
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = goLocation(latitudeValue: latitudeValue, longitudeValue: longtitudeValue, delta: span)
+        annotation.title = strTitle
+        annotation.subtitle = strsubtitle
+        myMap.addAnnotation(annotation)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let pLocation = locations.last
-        goLocation(latitudeValue: (pLocation?.coordinate.latitude)!, longitudeValue: (pLocation?.coordinate.longitude)!, delta: 0.01)
+        _=goLocation(latitudeValue: (pLocation?.coordinate.latitude)!, longitudeValue: (pLocation?.coordinate.longitude)!, delta: 0.01)
         CLGeocoder().reverseGeocodeLocation(pLocation!, completionHandler: {
             (placemarks, error)-> Void in
             let pm = placemarks!.first
@@ -59,7 +68,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func sgChangeLocation(_ sender: UISegmentedControl){
-        
+        if sender.selectedSegmentIndex == 0 {
+            
+        }
+        else if sender.selectedSegmentIndex == 1{
+            
+        }
+        else if sender.selectedSegmentIndex == 2 {
+            
+        }
     }
 
 
