@@ -72,10 +72,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
         }
         else if sender.selectedSegmentIndex == 1{
-            
+            setAnnotation(latitudeValue: 37.751853, longtitudeValue: 128.87605740000004, delta: 1, title: "한국폴리텍대학 강릉캠퍼스", subtitle: "강원도 강릉시 남산초교길 121")
+            self.lbLocationInfo.text = "보고 계신 위치"
+            self.lbLocationInfo2.text = "한국폴리텍대학 강릉캠퍼스"
         }
         else if sender.selectedSegmentIndex == 2 {
-            
+            setAnnotation(latitudeValue: 37.556876, longtitudeValue: 126.914066, delta: 0.1, title: "이지스퍼블리싱", subtitle: "서울시 마포구 잔다리로 109 이지스 빌딩")
+            self.lbLocationInfo.text = "보고 계신 위치"
+            self.lbLocationInfo2.text = "이지스퍼블리싱 출판사"
         }
     }
 
