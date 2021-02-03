@@ -69,7 +69,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func sgChangeLocation(_ sender: UISegmentedControl){
         if sender.selectedSegmentIndex == 0 {
-            
+            self.lbLocationInfo.text = ""
+            self.lbLocationInfo2.text = ""
+            locationManager.startUpdatingLocation()
         }
         else if sender.selectedSegmentIndex == 1{
             setAnnotation(latitudeValue: 37.751853, longtitudeValue: 128.87605740000004, delta: 1, title: "한국폴리텍대학 강릉캠퍼스", subtitle: "강원도 강릉시 남산초교길 121")
