@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EFCD8B8025D1696200D26155 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD8B7F25D1696200D26155 /* PostEditorViewController.swift */; };
+		EFCD8B8325D1698600D26155 /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD8B8225D1698600D26155 /* PublishPostViewController.swift */; };
 		EFDD69AB25D0350A0047BA38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDD69AA25D0350A0047BA38 /* AppDelegate.swift */; };
 		EFDD69AD25D0350A0047BA38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDD69AC25D0350A0047BA38 /* SceneDelegate.swift */; };
 		EFDD69AF25D0350A0047BA38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDD69AE25D0350A0047BA38 /* HomeViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EFCD8B7F25D1696200D26155 /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
+		EFCD8B8225D1698600D26155 /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		EFDD69A725D0350A0047BA38 /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFDD69AA25D0350A0047BA38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFDD69AC25D0350A0047BA38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				EFDD69E625D0372A0047BA38 /* ListViewController.swift */,
 				EFDD69E925D037440047BA38 /* SearchViewController.swift */,
 				EFDD69EC25D0374F0047BA38 /* SearchResultViewController.swift */,
+				EFCD8B7F25D1696200D26155 /* PostEditorViewController.swift */,
+				EFCD8B8225D1698600D26155 /* PublishPostViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -239,9 +245,11 @@
 			files = (
 				EFDD69E125D036EE0047BA38 /* EditProfileViewController.swift in Sources */,
 				EFDD69C625D035C10047BA38 /* ExploreViewController.swift in Sources */,
+				EFCD8B8325D1698600D26155 /* PublishPostViewController.swift in Sources */,
 				EFDD69C925D035E50047BA38 /* CameraViewController.swift in Sources */,
 				EFDD69CC25D035F40047BA38 /* NotificationViewController.swift in Sources */,
 				EFDD69DB25D036980047BA38 /* RegistrationViewController.swift in Sources */,
+				EFCD8B8025D1696200D26155 /* PostEditorViewController.swift in Sources */,
 				EFDD69DE25D036C00047BA38 /* PostViewController.swift in Sources */,
 				EFDD69AF25D0350A0047BA38 /* HomeViewController.swift in Sources */,
 				EFDD69ED25D0374F0047BA38 /* SearchResultViewController.swift in Sources */,
