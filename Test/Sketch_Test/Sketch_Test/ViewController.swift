@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var redButton : UIButton!
+    @IBOutlet weak var greenButton: UIButton!
+    @IBOutlet weak var blackBubbon: UIButton!
+    
     @IBOutlet var imgView: UIImageView!
     
     var lastPoint: CGPoint!
@@ -18,10 +22,39 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.redButton.layer.cornerRadius = 15
+        self.greenButton.layer.cornerRadius = 15
+        self.blackBubbon.layer.cornerRadius = 15
+        self.imgView.layer.borderColor = UIColor.black.cgColor
+        self.imgView.layer.borderWidth = 3
     }
     
     @IBAction func clearImageView(_ sender: UIButton){
         imgView.image = nil
+    }
+    
+    @IBAction func redButton(_ sender: UIButton){
+        if lineColor == UIColor.red.cgColor {
+            lineColor = UIColor.blue.cgColor
+        } else {
+            lineColor = UIColor.red.cgColor
+        }
+    }
+    
+    @IBAction func greenButton(_ sender: UIButton){
+        if lineColor == UIColor.green.cgColor {
+            lineColor = UIColor.blue.cgColor
+        } else {
+            lineColor = UIColor.green.cgColor
+        }
+    }
+    
+    @IBAction func blackButton(_ sender: UIButton){
+        if lineColor == UIColor.black.cgColor {
+            lineColor = UIColor.blue.cgColor
+        } else {
+            lineColor = UIColor.black.cgColor
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
