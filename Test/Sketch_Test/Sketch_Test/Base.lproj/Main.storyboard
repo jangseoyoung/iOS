@@ -57,7 +57,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="blackBubbon" destination="i7V-cH-ZN1" id="muy-iX-7kw"/>
+                        <outlet property="blackButton" destination="i7V-cH-ZN1" id="Mq5-nT-frl"/>
                         <outlet property="greenButton" destination="Qv0-Xo-8od" id="7f9-UW-LfF"/>
                         <outlet property="imgView" destination="u5I-yy-CEo" id="lPb-so-6CK"/>
                         <outlet property="redButton" destination="qGF-hu-xBy" id="pxP-4G-BAD"/>
@@ -66,6 +66,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="121.73913043478262" y="118.52678571428571"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2Kq-eX-dkj">
+            <objects>
+                <viewController id="OLP-kL-IKV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CpP-tw-URp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Gk-8v-jey">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="p2e-vE-xcb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p2e-vE-xcb" firstAttribute="trailing" secondItem="1Gk-8v-jey" secondAttribute="trailing" id="AB1-3e-Xq8"/>
+                            <constraint firstItem="1Gk-8v-jey" firstAttribute="top" secondItem="p2e-vE-xcb" secondAttribute="top" id="BjJ-g8-szX"/>
+                            <constraint firstItem="1Gk-8v-jey" firstAttribute="leading" secondItem="p2e-vE-xcb" secondAttribute="leading" id="DQY-y8-gUs"/>
+                            <constraint firstItem="p2e-vE-xcb" firstAttribute="bottom" secondItem="1Gk-8v-jey" secondAttribute="bottom" id="wvj-Vd-cHH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CR1-V1-iBJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917" y="119"/>
         </scene>
     </scenes>
     <resources>

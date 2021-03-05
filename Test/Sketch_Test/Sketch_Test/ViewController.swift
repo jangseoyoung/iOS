@@ -9,81 +9,89 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // 색 변경 버튼 아웃렛
     @IBOutlet weak var redButton : UIButton!
     @IBOutlet weak var greenButton: UIButton!
-    @IBOutlet weak var blackBubbon: UIButton!
+    @IBOutlet weak var blackButton: UIButton!
     
+    // 스케치북 (이미지뷰) 아웃렛
     @IBOutlet var imgView: UIImageView!
     
-    var lastPoint: CGPoint!
-    var lineSize: CGFloat = 2.0
-    var lineColor = UIColor.blue.cgColor
-
+    var lastPoint: CGPoint! // 바로 전에 터치 or 이동한 위치
+    var lineSize: CGFloat = 2.0 // 선 두께를 2.0으로 설정
+    var lineColor = UIColor.blue.cgColor // 선 색상을 파란색으로 설정(기본값)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.redButton.layer.cornerRadius = 15
         self.greenButton.layer.cornerRadius = 15
-        self.blackBubbon.layer.cornerRadius = 15
+        self.blackButton.layer.cornerRadius = 15
         self.imgView.layer.borderColor = UIColor.black.cgColor
         self.imgView.layer.borderWidth = 3
     }
     
+    // 모두 지우기
     @IBAction func clearImageView(_ sender: UIButton){
         imgView.image = nil
     }
     
+    // 빨간색 버튼이 눌렸을 때
     @IBAction func redButton(_ sender: UIButton){
-        if lineColor == UIColor.red.cgColor {
-            lineColor = UIColor.blue.cgColor
-        } else {
-            lineColor = UIColor.red.cgColor
+        if lineColor == UIColor.red.cgColor { //현재 펜 색이 빨간색일 때 누르면
+            lineColor = UIColor.blue.cgColor // 펜 색을 다시 파랑으로 바꿈.
+        } else { // 현재 펜 색이 다른 색일 때
+            lineColor = UIColor.red.cgColor // 펜 색을 빨간색으로 바꿈.
         }
     }
     
+    // 초록색 버튼이 눌렸을 때
     @IBAction func greenButton(_ sender: UIButton){
-        if lineColor == UIColor.green.cgColor {
-            lineColor = UIColor.blue.cgColor
-        } else {
-            lineColor = UIColor.green.cgColor
+        if lineColor == UIColor.green.cgColor { // 현재 펜 색이 초록색일 때 누르면
+            lineColor = UIColor.blue.cgColor // 펜 색을 다시 파랑으로 바꿈.
+            
+        } else { // 현재 펜 색이 다른 색일 때
+            lineColor = UIColor.green.cgColor // 펜 색을 초록색으로 바꿈.
         }
     }
     
+    // 검은색 버튼이 눌렸을 때
     @IBAction func blackButton(_ sender: UIButton){
-        if lineColor == UIColor.black.cgColor {
-            lineColor = UIColor.blue.cgColor
-        } else {
-            lineColor = UIColor.black.cgColor
+        if lineColor == UIColor.black.cgColor { //현재 펜 색이 검정일 때
+            lineColor = UIColor.blue.cgColor // 펜 색을 파란색으로 바꿈.
+        } else { // 현재 펜 색이 다를 때
+            lineColor = UIColor.black.cgColor // 펜 색을 검은색으로 바꿈
         }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first! as UITouch
+        let touch = touches.first! as UITouch // 현재 발생한 터치 이벤트를 가지고 옴
         
-        lastPoint = touch.location(in: imgView)
+        lastPoint = touch.location(in: imgView) // 터치된 위치를 lastPoint에 할당
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        UIGraphicsBeginImageContext(imgView.frame.size)
-        UIGraphicsGetCurrentContext()?.setStrokeColor(lineColor)
-        UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
-        UIGraphicsGetCurrentContext()?.setLineWidth(lineSize)
+        UIGraphicsBeginImageContext(imgView.frame.size) // 그림을 그리기 위한 콘텍스트 생성
+        UIGraphicsGetCurrentContext()?.setStrokeColor(lineColor) // 선 색상 설정
+        UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round) // 선 끝 모양 라운드로 설정
+        UIGraphicsGetCurrentContext()?.setLineWidth(lineSize) // 선 두께 설정
         
-        let touch = touches.first! as UITouch
-        let currPoint = touch.location(in: imgView)
+        let touch = touches.first! as UITouch // 현재 발생한 터치 이벤트를 가지고 옴
+        let currPoint = touch.location(in: imgView) // 터치된 좌표를 currPoint로 가지고 옴
         
-        imgView.image?.draw(in: CGRect(x: 0, y: 0, width: imgView.frame.size.width, height: imgView.frame.size.height))
+        imgView.image?.draw(in: CGRect(x: 0, y: 0, width: imgView.frame.size.width, height: imgView.frame.size.height)) // 현재 imgView에 있는 전체 이미지를 imgView의 크기로 그림
         
-        UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
-        UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: currPoint.x, y: currPoint.y))
-        UIGraphicsGetCurrentContext()?.strokePath()
+        UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y)) // lastPointd위치로 시작 위치를 이동
+        UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: currPoint.x, y: currPoint.y)) // lastPoint에서 currPoint까지 선을 추가
+        UIGraphicsGetCurrentContext()?.strokePath() // 추가한 선을 콘텍스트에 그림
         
-        imgView.image = UIGraphicsGetImageFromCurrentImageContext()
+        imgView.image = UIGraphicsGetImageFromCurrentImageContext()// 현재 터치된 위치를 lastPoint라는 변수에 할당
         UIGraphicsEndImageContext()
         
         lastPoint = currPoint
     }
     
+    // 위와 동일
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         UIGraphicsBeginImageContext(imgView.frame.size)
         UIGraphicsGetCurrentContext()?.setStrokeColor(lineColor)
@@ -101,11 +109,11 @@ class ViewController: UIViewController {
     }
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            imgView.image = nil
+        if motion == .motionShake { // 폰을 흔드는 모션이 발생할 시
+            imgView.image = nil // 이미지 뷰의 이미지 삭제
         }
     }
-
-
+    
+    
 }
 
